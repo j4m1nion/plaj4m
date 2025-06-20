@@ -1,7 +1,9 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android") version "1.9.24"
+    id("maven-publish")
 }
+
 
 android {
     namespace = "com.j4m1nion.j4player.player"
@@ -44,30 +46,34 @@ android {
 
 dependencies {
 
-    val composeBom = platform(libs.compose.bom)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
+    val composeBom = platform("androidx.compose:compose-bom:2024.11.00")
+    val material3 = "1.3.2"
+    val ktx = "1.16.0"
+    val appCompat = "1.7.1"
+    val navigationCompose = "2.8.4"
+    val composeRuntime = "1.8.2"
+    val coil = "3.0.4"
+    val media3 = "1.7.1"
+    implementation("androidx.core:core-ktx:$ktx")
+    implementation("androidx.appcompat:appcompat:$appCompat")
 
     //COMPOSE
     implementation(composeBom)
-    implementation(libs.compose.material)
-    implementation(libs.compose.activity)
-    implementation(libs.compose.ui.tooling.preview)
-    implementation(libs.compose.navigation)
-    implementation(libs.compose.runtime)
-    implementation(libs.coil)
-    implementation(libs.okHttp)
-    debugApi(libs.compose.ui.tooling)
+    implementation("androidx.compose.material3:material3:$material3")
+    implementation("androidx.activity:activity-compose")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.navigation:navigation-compose:$navigationCompose")
+    implementation("androidx.compose.runtime:runtime:$composeRuntime")
+    implementation("io.coil-kt.coil3:coil-compose:$coil")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:$coil")
+    debugApi("androidx.compose.ui:ui-tooling")
 
     //EXOPLAYER
-    implementation(libs.media3.exoplayer)
-    implementation(libs.media3.ui)
-    implementation(libs.media3.session)
-    implementation(libs.media3.exoplayer.hls)
-    implementation(libs.media3.exoplayer.dash)
+    implementation("androidx.media3:media3-exoplayer:$media3")
+    implementation("androidx.media3:media3-ui:$media3")
+    implementation("androidx.media3:media3-session:$media3")
+    implementation("androidx.media3:media3-exoplayer-hls:$media3")
+    implementation("androidx.media3:media3-exoplayer-dash:$media3")
 
-    //TEST
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }
+
