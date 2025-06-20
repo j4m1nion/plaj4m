@@ -183,8 +183,7 @@ fun PlayerScreen(
                                     playerState.currentTimeFormatted,
                                     playerState.durationFormatted,
                                     playerState.bufferedTimePercent,
-                                    volumeIsOn,
-                                    changeZoom)
+                                    volumeIsOn)
                             }
 
                             when{
