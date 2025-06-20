@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="simple_video_test">"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"</string>
+
+    <string name="button_play_cd">Play</string>
+    <string name="button_pause_cd">Pause</string>
+    <string name="button_forward10_cd">Forward 10 seconds</string>
+    <string name="button_replay10_cd">Replay 10 seconds</string>
+    <string name="button_skip_previous_cd">Skip to previous video</string>
+    <string name="button_skip_next_cd">Skip to next video</string>
+    <string name="button_volume_on">Activate audio</string>
+    <string name="button_volume_off">Deactivate audio</string>
+    <string name="button_zoomin_to_landscape">Change to landscape mode</string>
+    <string name="button_zoomout_to_portrait">Change to portrait mode</string>
+    <string name="button_zoomin">Enter in full screen</string>
+    <string name="button_zoomout">Exit from full screen</string>
+    <string name="player_error_text">Sorry, the media cannot be played at the moment.</string>
+</resources>
