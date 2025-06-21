@@ -29,11 +29,14 @@ android {
         }
         getByName("release") {
             isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "consumer-rules.pro")
+
         }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+        isCoreLibraryDesugaringEnabled = true
     }
     kotlinOptions {
         jvmTarget = "17"
@@ -56,6 +59,7 @@ publishing {
 dependencies {
 
     val composeBom = platform("androidx.compose:compose-bom:2024.11.00")
+    val desugaring = "2.1.5"
     val material3 = "1.3.2"
     val ktx = "1.16.0"
     val appCompat = "1.7.1"
@@ -65,6 +69,7 @@ dependencies {
     val media3 = "1.7.1"
     implementation("androidx.core:core-ktx:$ktx")
     implementation("androidx.appcompat:appcompat:$appCompat")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:$desugaring")
 
     //COMPOSE
     implementation(composeBom)
