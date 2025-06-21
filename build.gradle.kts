@@ -44,6 +44,19 @@ android {
     }
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            afterEvaluate {
+                from(components["release"])
+                groupId = "com.github.j4m1nion"
+                artifactId = "j4player"
+                version = "1.0.7"
+            }
+        }
+    }
+}
+
 dependencies {
 
     val composeBom = platform("androidx.compose:compose-bom:2024.11.00")
