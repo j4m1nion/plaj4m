@@ -77,7 +77,6 @@ fun PlayerScreen(
     val currentMediaFile by remember { derivedStateOf { viewModel.playerMediaState.value.currentMediaFile } }
     val playerState by viewModel.playerState
     val volumeIsOn by remember { derivedStateOf { playerState.playerVolume != 0f } }
-    val changeZoom by viewModel.requestZoom
     val changeShuffle by viewModel.requestShuffle
     val changeAutoplay by viewModel.requestAutoplay
     var titleIsExpanded by rememberSaveable { mutableStateOf(false) }
@@ -142,7 +141,7 @@ fun PlayerScreen(
                                     }
                                     .pointerInput(Unit){
                                         detectDragGestures(
-                                            onDragStart = { offset ->
+                                            onDragStart = {
                                                 startOffsetY = offsetY
                                                 },
                                             onDrag = { change, dragAmount ->
