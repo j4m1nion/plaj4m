@@ -23,6 +23,8 @@
 -dontwarn java.lang.invoke.StringConcatFactory
 
 -keep,allowobfuscation class **.R$* { *; }
+-keep class kotlin.Metadata { *; }
+
 
 -keep class com.j4m1nion.j4player.player.theme.** { *; }
 -keep class com.j4m1nion.j4player.player.configuration.** { *; }
@@ -30,3 +32,5 @@
 -keep class com.j4m1nion.j4player.player.PlayerScreenKt { *; }
 -keep class com.j4m1nion.j4player.player.PlayerViewModel { *; }
 -keep class com.j4m1nion.j4player.player.theme.PlayerThemeKt { *; }
+-keepclassmembers class com.j4m1nion.j4player.player.theme.PlayerThemeKt
+
