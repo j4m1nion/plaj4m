@@ -50,7 +50,7 @@ publishing {
                 from(components["release"])
                 groupId = "com.github.j4m1nion"
                 artifactId = "j4player"
-                version = "1.0.13"
+                version = "1.0.14"
             }
         }
     }
