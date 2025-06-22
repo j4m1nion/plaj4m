@@ -156,6 +156,7 @@ import com.j4m1nion.j4player.player.model.MediaFile
                     modifier = Modifier
                         .align(Alignment.BottomCenter)
                         .fillMaxWidth()
+                        .padding(horizontal = 24.dp)
                         .background(
                             Brush.verticalGradient(
                                 listOf(
@@ -297,9 +298,8 @@ import com.j4m1nion.j4player.player.model.MediaFile
         },
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
+            .padding(horizontal = 24.dp, vertical = 24.dp)
             .fillMaxWidth()
-            .padding(horizontal = 12.dp, vertical = 4.dp)
-
     ) {
         if (
             ((orientation == ORIENTATION_PORTRAIT && configuration.showTitleInPortrait) ||
