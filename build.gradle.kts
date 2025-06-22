@@ -1,6 +1,6 @@
 plugins {
     id("com.android.library") version "8.7.2"
-    id("org.jetbrains.kotlin.android") version "1.9.24"
+    kotlin("android") version "1.9.24"
     id("maven-publish")
 }
 
@@ -12,13 +12,7 @@ android {
     defaultConfig {
         minSdk = 26
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("src/main/res/consumer-rules.pro")
-    }
-
-    sourceSets {
-        getByName("main") {
-            resources.srcDirs("src/main/res")
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildFeatures {
@@ -35,7 +29,10 @@ android {
         }
         getByName("release") {
             isMinifyEnabled = true
-
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "consumer-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -57,7 +54,7 @@ publishing {
                 from(components["release"])
                 groupId = "com.github.j4m1nion"
                 artifactId = "j4player"
-                version = "1.0.17"
+                version = "1.0.18"
             }
         }
     }
@@ -66,6 +63,7 @@ publishing {
 dependencies {
 
     val composeBom = platform("androidx.compose:compose-bom:2024.11.00")
+    val kotlin_version = "1.9.24"
     val desugaring = "2.1.5"
     val material3 = "1.3.2"
     val ktx = "1.16.0"
@@ -80,6 +78,7 @@ dependencies {
 
     //COMPOSE
     implementation(composeBom)
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
     implementation("androidx.compose.material3:material3:$material3")
     implementation("androidx.activity:activity-compose")
     implementation("androidx.compose.ui:ui-tooling-preview")
