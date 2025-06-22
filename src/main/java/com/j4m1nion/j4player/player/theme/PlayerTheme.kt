@@ -1,6 +1,5 @@
 package com.j4m1nion.j4player.player.theme
 
-import androidx.annotation.Keep
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -20,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.j4m1nion.j4player.player.R
 
-@Keep
 @Composable
 fun PlayerTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

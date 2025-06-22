@@ -59,7 +59,6 @@ import kotlinx.coroutines.delay
 import kotlin.math.roundToInt
 
 @OptIn(UnstableApi::class)
-@Keep
 @Composable
 fun PlayerScreen(
     mediaFiles : List<MediaFile>,

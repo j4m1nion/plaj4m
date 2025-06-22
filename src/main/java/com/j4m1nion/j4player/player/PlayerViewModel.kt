@@ -30,7 +30,6 @@ import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 @UnstableApi
-@Keep
 open class PlayerViewModel(
     application: Application,
     val exoplayer: ExoPlayer = ExoPlayer
