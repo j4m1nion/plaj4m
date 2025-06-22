@@ -12,7 +12,7 @@ android {
     defaultConfig {
         minSdk = 26
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
+        consumerProguardFiles("src/main/resources/consumer-rules.pro")
     }
 
     sourceSets {
@@ -57,7 +57,7 @@ publishing {
                 from(components["release"])
                 groupId = "com.github.j4m1nion"
                 artifactId = "j4player"
-                version = "1.0.15"
+                version = "1.0.16"
             }
         }
     }
