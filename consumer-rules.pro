@@ -32,5 +32,5 @@
 -keep class com.j4m1nion.j4player.player.PlayerScreenKt { *; }
 -keep class com.j4m1nion.j4player.player.PlayerViewModel { *; }
 -keep class com.j4m1nion.j4player.player.theme.PlayerThemeKt { *; }
--keepclassmembers class com.j4m1nion.j4player.player.theme.PlayerThemeKt
+-keepclassmembers class com.j4m1nion.j4player.player.theme.PlayerThemeKt { *; }
 
