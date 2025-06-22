@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.library")
+    id("com.android.library") version "8.7.2"
     id("org.jetbrains.kotlin.android") version "1.9.24"
     id("maven-publish")
 }
@@ -57,7 +57,7 @@ publishing {
                 from(components["release"])
                 groupId = "com.github.j4m1nion"
                 artifactId = "j4player"
-                version = "1.0.14"
+                version = "1.0.15"
             }
         }
     }
