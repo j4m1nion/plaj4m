@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.library") version "8.7.2"
+    id("com.android.library")
     id("org.jetbrains.kotlin.android") version "1.9.24"
     id("maven-publish")
 }
@@ -13,6 +13,12 @@ android {
         minSdk = 26
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+    }
+
+    sourceSets {
+        getByName("main") {
+            resources.srcDirs("src/main/resources")
+        }
     }
 
     buildFeatures {
@@ -29,7 +35,6 @@ android {
         }
         getByName("release") {
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "consumer-rules.pro")
 
         }
     }
@@ -41,6 +46,8 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+
 }
 
 publishing {
