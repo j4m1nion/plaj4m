@@ -38,7 +38,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-        isCoreLibraryDesugaringEnabled = true
     }
     kotlinOptions {
         jvmTarget = "17"
@@ -54,7 +53,7 @@ publishing {
                 from(components["release"])
                 groupId = "com.github.j4m1nion"
                 artifactId = "j4player"
-                version = "1.0.18"
+                version = "1.0.19"
             }
         }
     }
@@ -63,8 +62,7 @@ publishing {
 dependencies {
 
     val composeBom = platform("androidx.compose:compose-bom:2024.11.00")
-    val kotlin_version = "1.9.24"
-    val desugaring = "2.1.5"
+    val kotlinVersion = "1.9.24"
     val material3 = "1.3.2"
     val ktx = "1.16.0"
     val appCompat = "1.7.1"
@@ -74,11 +72,10 @@ dependencies {
     val media3 = "1.7.1"
     implementation("androidx.core:core-ktx:$ktx")
     implementation("androidx.appcompat:appcompat:$appCompat")
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:$desugaring")
 
     //COMPOSE
     implementation(composeBom)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
     implementation("androidx.compose.material3:material3:$material3")
     implementation("androidx.activity:activity-compose")
     implementation("androidx.compose.ui:ui-tooling-preview")
