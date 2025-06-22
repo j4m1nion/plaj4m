@@ -12,12 +12,12 @@ android {
     defaultConfig {
         minSdk = 26
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("src/main/resources/consumer-rules.pro")
+        consumerProguardFiles("src/main/res/consumer-rules.pro")
     }
 
     sourceSets {
         getByName("main") {
-            resources.srcDirs("src/main/resources")
+            resources.srcDirs("src/main/res")
         }
     }
 
