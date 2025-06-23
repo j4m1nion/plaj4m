@@ -169,5 +169,5 @@ I created J4Player as a fun and challenging way to apply my experience with Comp
 Always open to feedback, collaboration, or coffee ☕.
 
 ##  License
-MIT — use freely, credit appreciated.
+Apache License Version 2.0 — use freely.
 
