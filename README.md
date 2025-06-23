@@ -2,21 +2,12 @@
 
 **A modern, customizable Android media player UI built with Jetpack Compose and Media3 (ExoPlayer)** 
 
-•  Kotlin 
-•  Compose 
-•  Modular
-•  Media3 
-
 ---
 
 ## Overview
 
-**Plaj4m** is a fully customizable, lightweight Android media player UI component that can be dropped into any Compose-based app. 
-It was developed for fun and it includes clean architecture, state management, Jetpack libraries, and publishing to Maven.
+**Plaj4m** is a fully customizable and lightweight media player UI component for Android apps using Jetpack Compose. It was developed as a fun side project. The library is modular, follows MVVM with unidirectional data flow, and supports Picture-in-Picture and rich player configuration.
 
-<p align="center">
-  <img src="https://github.com/j4m1nion/j4player/raw/main/art/player_demo.gif" width="320"/>
-</p>
 
 ---
 
@@ -37,7 +28,7 @@ It was developed for fun and it includes clean architecture, state management, J
 
 - **Language**: Kotlin
 - **UI**: Jetpack Compose
-- **Playback**: Media3
+- **Playback**: Media3 (ExoPlayer)
 - **Pattern**: MVVM + Unidirectional Data Flow
 - **Modules**:
   - `model/`: domain models (`MediaFile`, `MediaChapter`)
@@ -63,9 +54,9 @@ dependencyResolutionManagement {
 }
 
 ```
-In the app gradle file:
+In the app's `build.gradle`:
 
-```
+```kotlin
 dependencies {
     implementation("com.github.j4m1nion:plaj4m:1.0.20")
 }
@@ -73,15 +64,18 @@ dependencies {
 ```
 
 Then you can use the Player Screen calling 
-```
+```kotlin
 fun PlayerScreen(
     mediaFiles : List<MediaFile>,
     viewModel: PlayerViewModel,
     playerViewConfiguration: PlayerViewConfiguration = PlayerViewConfiguration(),
     loadingView: @Composable (BoxScope.() -> Unit) ? = null,
     errorView: @Composable (BoxScope.() -> Unit) ? = null)
+```
 
-Eg:
+##  Usage Example
+
+```kotlin
 PlayerScreen(MediaFilesBuilder.playlist(), viewModel { PlayerViewModel(application) },
                                     playerViewConfiguration = PlayerViewConfiguration(
                                         features = PlayerFeatureConfiguration(
@@ -117,15 +111,15 @@ PlayerScreen(MediaFilesBuilder.playlist(), viewModel { PlayerViewModel(applicati
 
 ```
 
-Or just use the PlayerViewModel providing your custom ui and playerview. 
+Alternatively, use PlayerViewModel directly and build your own UI around it.
 
-##  Configuration: 
+##  Configuration
 
-The player can be easily configurated in: 
+###  Theming 
 
-UI
-  If you use the theme included PlayerTheme the color can be easily changed modifying these properties in your colors.xml
-  ```
+If you're using the bundled PlayerTheme, colors can be customized via your colors.xml:
+
+```xml
 <resources>
     <color name="primary">#FFFF0000</color>
     <color name="secondary_light">@android:color/white</color>
@@ -133,12 +127,12 @@ UI
     <color name="secondary_dark">#FF282828</color>
 </resources>
  ```
-Features: 
-  The playes can be customized using the PlayerViewConfiguration that the composable has as parameters. 
+
+###  Player Behaviour 
+The PlayerViewConfiguration class allows you to control player features, layout behavior, and animations via Compose parameters.
   
 ##  Security Notes
-This is a UI/player component and does not include networking logic.
-For production use with remote media sources, consider:
+Plaj4m focuses purely on UI and playback. For remote media playback in production, consider:
 
 • Adding a network_security_config.xml
 
@@ -147,9 +141,12 @@ For production use with remote media sources, consider:
 • Using file URI sanitization for untrusted media
 
 ##   Screenshots
-Controller UI	Media Info	PiP Support
+<img src="https://github.com/user-attachments/assets/0c10943f-8cca-41ad-8477-3e4f2664ff7c" width="300"/>
+<img src="https://github.com/user-attachments/assets/01848a18-c619-4e76-a40a-f904b840cc1a" width="300"/>
+<img src="https://github.com/user-attachments/assets/6f74fa6c-e982-4f0d-800c-60fb54ec1f79" width="300"/>
+<img src="https://github.com/user-attachments/assets/1c9dd799-773c-4f7f-b685-d6d260d9542d" height="300"/>
 
-(Add your screenshots or GIFs under /art/ folder)
+
 
 ##   Development Notes
 Requirements
@@ -162,12 +159,11 @@ Requirements
 • Gradle: 8.9+
 
 ##   Why I Built This
-I created J4Player as a fun and challenging way to apply my experience with Compose, architecture patterns, and media APIs.
+Plaj4m was created as a hands-on project to apply my knowledge of modern Android development, architecture patterns, and Compose-based UI design. It was also a way to experiment with modular publishing and player customization at scale. It was made mainly for fun. 
 
 ##  Author
-@j4m1nion
-Always open to feedback, collaboration, or coffee ☕.
+@j4m1nion — open to feedback, collaboration, or a chat over coffee.
 
 ##  License
-Apache License Version 2.0 — use freely.
+Apache License 2.0 — free to use, modify, or integrate into your own projects.
 
