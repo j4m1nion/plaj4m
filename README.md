@@ -58,7 +58,7 @@ In the app's `build.gradle`:
 
 ```kotlin
 dependencies {
-    implementation("com.github.j4m1nion:plaj4m:1.0.20")
+    implementation("com.github.j4m1nion:plaj4m:1.0.21")
 }
 
 ```
