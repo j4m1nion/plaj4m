@@ -53,7 +53,7 @@ publishing {
                 from(components["release"])
                 groupId = "com.github.j4m1nion"
                 artifactId = "j4player"
-                version = "1.0.20"
+                version = "1.0.21"
             }
         }
     }
