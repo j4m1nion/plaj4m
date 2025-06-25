@@ -115,7 +115,7 @@ fun PlayerScreen(
         verticalArrangement = Arrangement.Top
     ) {
 
-                        Box{
+                        Box(modifier = Modifier.offset { IntOffset(0, if(configuration.orientation == android.content.res.Configuration.ORIENTATION_PORTRAIT) offsetY.roundToInt() else 0) }){
                             AndroidView(
                                 factory = { ctx ->
                                     PlayerView(ctx).apply {
@@ -132,7 +132,6 @@ fun PlayerScreen(
                                     it.resizeMode = configuration.getResizeParameter(playerViewConfiguration.controllerConfiguration)
                                 },
                                 modifier = Modifier
-                                    .offset { IntOffset(0, if(configuration.orientation == android.content.res.Configuration.ORIENTATION_PORTRAIT) offsetY.roundToInt() else 0) }
                                     .align(Alignment.TopCenter)
                                     .fillMaxWidth()
                                     .clickable {
